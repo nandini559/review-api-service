@@ -8,6 +8,7 @@ import {UserService} from "./user/user.service";
 import {ProductService} from "./product/product.service";
 import {ReviewService} from "./review/review.service";
 import {PrismaService} from "./prisma/prisma.service";
+import {ProductModule} from "./product/product.module";
 
 @Module({
   imports: [],
