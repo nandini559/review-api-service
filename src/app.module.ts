@@ -9,12 +9,21 @@ import {ProductService} from "./product/product.service";
 import {ReviewService} from "./review/review.service";
 import {PrismaService} from "./prisma/prisma.service";
 import {ProductModule} from "./product/product.module";
+import {TaggedUserController} from "./tagged-user/tagged-user.controller";
+import {TaggedUserService} from "./tagged-user/tagged-user.service";
 
 @Module({
   imports: [],
   controllers: [
-    AppController, UserController, ProductController, ReviewController
+    AppController, UserController, ProductController, ReviewController, TaggedUserController
   ],
-  providers: [PrismaService, AppService, UserService, ProductService, ReviewService]
+  providers: [
+    PrismaService,
+    AppService,
+    UserService,
+    ProductService,
+    ReviewService,
+    TaggedUserService
+  ]
 })
 export class AppModule {}
