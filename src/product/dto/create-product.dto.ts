@@ -8,6 +8,10 @@ export class CreateProductDto {
 
   @ApiProperty()
   @IsString()
+  image: string;
+
+  @ApiProperty()
+  @IsString()
   description: string;
 
   @ApiProperty()

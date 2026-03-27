@@ -11,9 +11,10 @@ import {PrismaService} from "./prisma/prisma.service";
 import {ProductModule} from "./product/product.module";
 import {TaggedUserController} from "./tagged-user/tagged-user.controller";
 import {TaggedUserService} from "./tagged-user/tagged-user.service";
+import {UserModule} from "./user/user.module";
 
 @Module({
-  imports: [],
+  imports: [UserModule],
   controllers: [
     AppController, UserController, ProductController, ReviewController, TaggedUserController
   ],

@@ -21,7 +21,7 @@ model Product {
   title       String
   description String
   price       Float
-
+ image       String?
   reviews     Review[]
 }
 
