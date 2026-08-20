@@ -18,11 +18,29 @@ export class ProductService {
     return this.prisma.product.findMany();
   }
 
-  // GET ONE
+  //get one
   async findOne(id : number) {
-    const product = await this.prisma.product.findUnique({where: {
+    const product = await this.prisma.product.findUnique({
+      where: {
         id
-      }});
+      },
+      include: {
+        reviews: {
+          include: {
+            user: true, // 👤 who wrote review
+            tags: {
+              include: {
+                user: true // 🏷️ tagged users
+              }
+            }
+          }
+        }
+      }
+    });
+
+    if (!product) {
+      throw new NotFoundException("Product not found");
+    }
 
     if (!product) {
       throw new NotFoundException("Product not found");
